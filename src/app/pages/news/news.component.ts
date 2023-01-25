@@ -17,7 +17,6 @@ export class NewsComponent implements OnInit {
   ngOnInit(): void {
     this.getTopIds();
     this.getTopNews();
-    console.log('hello', this.topNews);
   }
   getTopIds() {
     this.apiService
@@ -30,7 +29,6 @@ export class NewsComponent implements OnInit {
       )
       .subscribe((data) => {
         this.topNews = data;
-        console.log(this.topNews);
       });
   }
   getTopNews() {

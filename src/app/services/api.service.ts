@@ -14,6 +14,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getItems(ids: number[]): Observable<News[]> {
+    // get only 10 items instead of 500
     const observables = ids
       .slice(0, 10)
       .map((id) => this.http.get<News>(`${this.NEWS_URL}item/${id}.json`));
