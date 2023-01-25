@@ -49,5 +49,5 @@ yarn start
 - [x] Generate the Angular app using the Angular CLI
 - [x] Clean up the folder
 - [x] Fetch the **news** from the API and create the components
-- [ ] Use Bootsrap for styling
+- [x] Use Bootsrap for styling
 
