@@ -1,0 +1,9 @@
+<div class="news-list">
+  <div class="news-item" *ngFor="let newsItem of topNews">
+    <a [href]="newsItem.title" target="_blank" class="title">{{
+      newsItem.title
+    }}</a>
+    <span class="domain">({{ newsItem.url }})</span>
+    <div class="subtext">{{ newsItem.score }} points by {{ newsItem.by }}</div>
+  </div>
+</div>

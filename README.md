@@ -1,27 +1,53 @@
-# TrendingNewsTask
+# hacker-news-angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
+> Hacker news clone built with Angular
 
-## Development server
+## 🚀 Getting started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2 It's recommended to install the angular-cli globally using:
 
-## Code scaffolding
+```bash
+npm i -g @angular/cli
+# OR
+yarn global add @angular/cli
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Download
 
-## Build
+Clone the repository using **Git**:
+```bash
+git clone https://github.com/lipskij/ternding-news-angular
+```
+Or download [here](https://github.com/lipskij/ternding-news-angular/archive/develop.zip).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Install
 
-## Running unit tests
+For installing the dependencies run:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+cd trending-news-task
+npm install
+# OR
+yarn install
+```
 
-## Running end-to-end tests
+### Usage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+For running the Angular development server:
 
-## Further help
+```sh
+# if you have the Angular CLI
+ng serve
+# else 
+npm run start
+# OR
+yarn start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Todo
+
+- [x] Generate the Angular app using the Angular CLI
+- [x] Clean up the folder
+- [x] Fetch the **news** from the API and create the components
+- [ ] Use Bootsrap for styling
+
