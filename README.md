@@ -1,6 +1,6 @@
 # hacker-news-angular
 
-> Hacker news clone built with Angular
+> Hacker trending news application  built with Angular
 
 ## 🚀 Getting started
 
