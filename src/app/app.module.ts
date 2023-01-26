@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NewsComponent } from './pages/news/news.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, NewsComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule, NgxPaginationModule],
   providers: [],
   bootstrap: [AppComponent],
 })

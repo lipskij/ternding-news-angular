@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
 import { News } from '../../models';
-import { switchMap, tap } from 'rxjs';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-news',
@@ -12,6 +12,11 @@ import { switchMap, tap } from 'rxjs';
 export class NewsComponent implements OnInit {
   topIds: number[] = [];
   topNews: News[] = [];
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 5;
+  tableSizes = [3, 6, 9, 12];
+  loading: boolean = true;
 
   constructor(private apiService: ApiService) {}
   ngOnInit(): void {
@@ -21,13 +26,9 @@ export class NewsComponent implements OnInit {
   getTopIds() {
     this.apiService
       .getTopIds()
-      .pipe(
-        tap((ids) => {
-          this.topIds = ids;
-        }), // required only if you need to store ids
-        switchMap((ids) => this.apiService.getItems(ids))
-      )
+      .pipe(switchMap((ids) => this.apiService.getItems(ids)))
       .subscribe((data) => {
+        this.loading = false;
         this.topNews = data;
       });
   }
@@ -35,5 +36,9 @@ export class NewsComponent implements OnInit {
     this.apiService
       .getItems(this.topIds)
       .subscribe((data) => (this.topNews = data));
+  }
+  onTableDataChange(event: number) {
+    this.page = event;
+    this.getTopNews();
   }
 }
