@@ -24,4 +24,8 @@ export class ApiService {
   getTopIds(): Observable<number[]> {
     return this.http.get<number[]>(this.BASE_URL);
   }
+  // most voted news
+  getMostVotedNews(): Observable<News[]> {
+    return this.http.get<News[]>(`${this.NEWS_URL}mostvoted.json`);
+  }
 }

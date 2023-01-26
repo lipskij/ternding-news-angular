@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +8,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   currentUrl!: string;
+  name!: string;
 
-  constructor(private router: Router) {}
+  constructor(private route: ActivatedRoute,) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.name = params['name'];
+    });
+  }
 }
