@@ -54,4 +54,4 @@ yarn start
 
 ## Live version
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6525df2b-e1c7-4969-8a87-009319c3e56e/deploy-status)](https://app.netlify.com/sites/trending-news-task/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6525df2b-e1c7-4969-8a87-009319c3e56e/deploy-status)](https://app.netlify.com/sites/trending-news-task/deploys) [click me](https://trending-news-task.netlify.app/)
