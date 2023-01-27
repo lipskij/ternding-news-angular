@@ -21,7 +21,7 @@ export class TopComponent implements OnInit {
   constructor(private apiService: ApiService) {}
   ngOnInit(): void {
     this.getTopIds();
-    this.getMostVotedNews();
+    this.getTopNews();
   }
   getTopIds() {
     this.apiService
@@ -33,13 +33,13 @@ export class TopComponent implements OnInit {
         this.topNews = data;
       });
   }
-  getMostVotedNews() {
+  getTopNews() {
     this.apiService
       .getItems(this.topIds)
       .subscribe((data) => (this.topNews = data));
   }
   onTableDataChange(event: number) {
     this.page = event;
-    this.getMostVotedNews();
+    this.getTopNews();
   }
 }
