@@ -17,10 +17,10 @@ yarn global add @angular/cli
 Clone the repository using **Git**:
 
 ```bash
-git clone https://github.com/lipskij/ternding-news-angular
+git clone https://github.com/lipskij/trending-news-angular
 ```
 
-Or download [here](https://github.com/lipskij/ternding-news-angular/archive/develop.zip).
+Or download [here](https://github.com/lipskij/trending-news-angular/archive/develop.zip).
 
 ### Install
 
