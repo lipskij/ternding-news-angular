@@ -1,6 +1,6 @@
 # hacker-news-angular
 
-> Hacker trending news application  built with Angular
+> Hacker trending news application built with Angular
 
 ## 🚀 Getting started
 
@@ -15,9 +15,11 @@ yarn global add @angular/cli
 ### Download
 
 Clone the repository using **Git**:
+
 ```bash
 git clone https://github.com/lipskij/ternding-news-angular
 ```
+
 Or download [here](https://github.com/lipskij/ternding-news-angular/archive/develop.zip).
 
 ### Install
@@ -38,7 +40,7 @@ For running the Angular development server:
 ```sh
 # if you have the Angular CLI
 ng serve
-# else 
+# else
 npm run start
 # OR
 yarn start
@@ -54,5 +56,5 @@ yarn start
 
 ## Live version
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6525df2b-e1c7-4969-8a87-009319c3e56e/deploy-status)](https://app.netlify.com/sites/trending-news-task/deploys) 
-[Click me](https://trending-news-task.netlify.app/){:target="_blank" rel="noopener"}
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6525df2b-e1c7-4969-8a87-009319c3e56e/deploy-status)](https://app.netlify.com/sites/trending-news-task/deploys)
+[Click me](https://trending-news-task.netlify.app/)
