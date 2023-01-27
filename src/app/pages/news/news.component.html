@@ -7,33 +7,30 @@
   <div
     class="d-flex flex-column text-left p-4 mt-2"
     *ngFor="
-      let newsItem of topNews
-        | paginate
-          : {
-              itemsPerPage: tableSize,
-              currentPage: page,
-              totalItems: count
-            };
-      let i = index
+      let t of tableContent
+        | slice
+          : (pagination.currentPage - 1) * pagination.pageSize
+          : pagination.currentPage * pagination.pageSize
     "
   >
     <a
       ngbTooltip="Click to go to the website"
-      [href]="newsItem.url"
+      [href]="t.url"
       target="_blank"
       class="mb-2 text-dark"
     >
-      {{ newsItem.title }}</a
+      {{ t.title }}</a
     >
-    <span class="text-secondary text-truncate">({{ newsItem.url }})</span>
-    <div class="text-secondary">{{ newsItem.score }} points</div>
+    <span class="text-secondary text-truncate">({{ t.url }})</span>
+    <div class="text-secondary">{{ t.score }} points</div>
   </div>
-  <pagination-controls
-    class="d-flex justify-content-center"
-    previousLabel="Prev"
-    nextLabel="Next"
-    [responsive]="true"
-    (pageChange)="onTableDataChange($event)"
-  >
-  </pagination-controls>
+  <div class="d-flex justify-content-center">
+    <app-pagination
+      #pagination
+      [collectionSize]="tableContent.length"
+      [pageSize]="10"
+      [firstLastButtons]="true"
+      [maxSize]="2"
+    ></app-pagination>
+  </div>
 </div>

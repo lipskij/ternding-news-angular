@@ -8,4 +8,5 @@ export interface News {
   type?: string;
   url?: string;
   text?: string;
+  name?: string;
 }

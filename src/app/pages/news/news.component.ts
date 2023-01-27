@@ -11,11 +11,7 @@ import { switchMap } from 'rxjs';
 })
 export class NewsComponent implements OnInit {
   topIds: number[] = [];
-  topNews: News[] = [];
-  page: number = 1;
-  count: number = 0;
-  tableSize: number = 5;
-  tableSizes = [3, 6, 9, 12];
+  tableContent: News[] = [];
   loading: boolean = true;
 
   constructor(private apiService: ApiService) {}
@@ -29,16 +25,12 @@ export class NewsComponent implements OnInit {
       .pipe(switchMap((ids) => this.apiService.getItems(ids)))
       .subscribe((data) => {
         this.loading = false;
-        this.topNews = data;
+        this.tableContent = data;
       });
   }
   getTopNews() {
     this.apiService
       .getItems(this.topIds)
-      .subscribe((data) => (this.topNews = data));
-  }
-  onTableDataChange(event: number) {
-    this.page = event;
-    this.getTopNews();
+      .subscribe((data) => (this.tableContent = data));
   }
 }
