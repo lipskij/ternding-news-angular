@@ -27,7 +27,6 @@ export class PaginationComponent implements OnInit {
 
   ngOnInit(): void {
     this.totalPages = new Array(Math.ceil(this.collectionSize / this.pageSize));
-    console.log(this.totalPages);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -40,7 +39,6 @@ export class PaginationComponent implements OnInit {
 
   next() {
     const nextPage = this.currentPage + 1;
-    console.log(nextPage);
     nextPage <= this.totalPages.length && this.selectPageNumber(nextPage);
   }
 
