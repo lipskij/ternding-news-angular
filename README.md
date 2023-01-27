@@ -50,6 +50,7 @@ yarn start
 - [x] Clean up the folder
 - [x] Fetch the **news** from the API and create the components
 - [x] Use Bootsrap for styling
+- [x] Page pagination
 
 ## Live version
 
