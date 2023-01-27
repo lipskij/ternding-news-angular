@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
 import { News } from '../../models';
-import { map, switchMap } from 'rxjs';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-news',
@@ -12,7 +12,7 @@ import { map, switchMap } from 'rxjs';
 export class TopComponent implements OnInit {
   topIds: number[] = [];
   tableContent: News[] = [];
-  loading: boolean = true;
+  loading = true;
 
   constructor(private apiService: ApiService) {}
   ngOnInit(): void {

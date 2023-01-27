@@ -21,14 +21,17 @@ export class PaginationComponent implements OnInit {
   @Input()
   small = false;
 
-  totalPages: any[] = [];
+  totalPages: number[] = [];
 
-  constructor() {}
+  constructor() {
+    // do nothing
+  }
 
   ngOnInit(): void {
     this.totalPages = new Array(Math.ceil(this.collectionSize / this.pageSize));
   }
 
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface, @typescript-eslint/no-unused-vars
   ngOnChanges(changes: SimpleChanges) {
     this.totalPages = new Array(Math.ceil(this.collectionSize / this.pageSize));
   }

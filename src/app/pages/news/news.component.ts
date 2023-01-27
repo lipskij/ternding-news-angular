@@ -12,7 +12,7 @@ import { switchMap } from 'rxjs';
 export class NewsComponent implements OnInit {
   topIds: number[] = [];
   tableContent: News[] = [];
-  loading: boolean = true;
+  loading = true;
 
   constructor(private apiService: ApiService) {}
   ngOnInit(): void {
