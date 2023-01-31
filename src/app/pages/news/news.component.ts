@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
 import { News } from '../../models';
@@ -9,22 +9,34 @@ import { switchMap } from 'rxjs';
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.css'],
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent implements AfterViewInit {
   topIds: number[] = [];
   tableContent: News[] = [];
   loading = true;
 
   constructor(private apiService: ApiService) {}
-  ngOnInit(): void {
-    this.getTopIds();
-    this.getTopNews();
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.getTopIds();
+      this.getTopNews();
+    }, 1);
   }
+
   getTopIds() {
+    const localData = localStorage.getItem('topNews');
+    if (localData) {
+      this.loading = false;
+      return (this.tableContent = JSON.parse(localData));
+    }
     this.apiService
       .getTopIds()
       .pipe(switchMap((ids) => this.apiService.getItems(ids)))
       .subscribe((data) => {
         this.loading = false;
+        localData
+          ? localStorage.setItem('topNews', JSON.stringify(data))
+          : null;
+
         this.tableContent = data;
       });
   }
