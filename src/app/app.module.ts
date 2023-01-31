@@ -10,15 +10,29 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopComponent } from './pages/top/top.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NewsComponent, TopComponent, PaginationComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule, ServiceWorkerModule.register('ngsw-worker.js', {
-  enabled: !isDevMode(),
-  // Register the ServiceWorker as soon as the application is stable
-  // or after 30 seconds (whichever comes first).
-  registrationStrategy: 'registerWhenStable:30000'
-})],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    NewsComponent,
+    TopComponent,
+    PaginationComponent,
+    FooterComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
