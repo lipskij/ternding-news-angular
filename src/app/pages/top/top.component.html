@@ -10,7 +10,8 @@
       let t of tableContent
         | slice
           : (pagination.currentPage - 1) * pagination.pageSize
-          : pagination.currentPage * pagination.pageSize
+          : pagination.currentPage * pagination.pageSize;
+      let i = index
     "
   >
     <a
@@ -18,11 +19,22 @@
       [href]="t.url"
       target="_blank"
       class="mb-2 text-dark"
+      *ngIf="pagination.currentPage === 1"
     >
-      {{ t.title }}</a
+      {{ i + 1 }}. {{ t.title }}</a
+    >
+    <a
+      ngbTooltip="Click to go to the website"
+      [href]="t.url"
+      target="_blank"
+      class="mb-2 text-dark"
+      *ngIf="pagination.currentPage > 1"
+    >
+      {{ (pagination.currentPage - 1) * 10 + (i + 1) }}. {{ t.title }}</a
     >
     <span class="text-secondary text-truncate">({{ t.url }})</span>
     <div class="text-secondary">{{ t.score }} points</div>
+    <hr />
   </div>
   <div class="d-flex justify-content-center">
     <app-pagination
