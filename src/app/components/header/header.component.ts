@@ -1,20 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   currentUrl!: string;
   name!: string;
 
-  constructor(private route: ActivatedRoute,) {}
-
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.name = params['name'];
-    });
+  constructor() {
+    // do nothing
   }
 }

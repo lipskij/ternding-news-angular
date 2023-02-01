@@ -12,7 +12,9 @@ import { switchMap } from 'rxjs';
 export class NewsComponent implements AfterViewInit {
   topIds: number[] = [];
   tableContent: News[] = [];
+  topNews: News[] = [];
   loading = true;
+  sorted = false;
 
   constructor(private apiService: ApiService) {}
   ngAfterViewInit() {
@@ -44,5 +46,19 @@ export class NewsComponent implements AfterViewInit {
     this.apiService
       .getItems(this.topIds)
       .subscribe((data) => (this.tableContent = data));
+  }
+
+  sortNewsDsc() {
+    this.topNews = this.tableContent.sort(
+      (a: any, b: any) => b.score - a.score
+    );
+    this.sorted = true;
+  }
+
+  sortNewsAsc() {
+    this.topNews = this.tableContent.sort(
+      (a: any, b: any) => a.score - b.score
+    );
+    this.sorted = false;
   }
 }
