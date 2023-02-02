@@ -9,7 +9,7 @@ export class PaginationComponent implements OnInit {
   @Input()
   collectionSize = 0;
   @Input()
-  pageSize = 5;
+  pageSize = 15;
   @Input()
   currentPage = 1;
   @Input()

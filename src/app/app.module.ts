@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NewsComponent } from './pages/news/news.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TopComponent } from './pages/top/top.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FooterComponent } from './components/footer/footer.component';
@@ -17,7 +16,6 @@ import { FooterComponent } from './components/footer/footer.component';
     AppComponent,
     HeaderComponent,
     NewsComponent,
-    TopComponent,
     PaginationComponent,
     FooterComponent,
   ],
