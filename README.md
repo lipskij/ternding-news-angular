@@ -53,8 +53,3 @@ yarn start
 - [x] Fetch the **news** from the API and create the components
 - [x] Use Bootsrap for styling
 - [x] Page pagination
-
-## Live version
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6525df2b-e1c7-4969-8a87-009319c3e56e/deploy-status)](https://app.netlify.com/sites/trending-news-task/deploys)
-[Click me](https://trending-news-task.netlify.app/)
