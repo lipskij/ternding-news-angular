@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/trending-news-task",
+            "outputPath": "dist/trending-news-task/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -109,6 +109,59 @@
               "src/**/*.html"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/trending-news-task/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "trending-news-task:build:development",
+              "serverTarget": "trending-news-task:server:development"
+            },
+            "production": {
+              "browserTarget": "trending-news-task:build:production",
+              "serverTarget": "trending-news-task:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "trending-news-task:build:production",
+              "serverTarget": "trending-news-task:server:production"
+            },
+            "development": {
+              "browserTarget": "trending-news-task:build:development",
+              "serverTarget": "trending-news-task:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

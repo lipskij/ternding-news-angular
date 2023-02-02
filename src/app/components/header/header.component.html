@@ -5,14 +5,19 @@
   <div class="">
     <ul ngbNav #nav="ngbNav" class="nav-tabs bg-dark">
       <li ngbNavItem>
-        <a ngbNavLink routerLink="/" [class.activated]="currentUrl === '/'"
+        <a
+          ngbNavLink
+          [routerLink]="['/']"
+          [state]="{ page: 1 }"
+          [class.activated]="currentUrl === '/'"
           >Trending News</a
         >
       </li>
       <li ngbNavItem>
         <a
           ngbNavLink
-          routerLink="/top"
+          [routerLink]="['/top']"
+          [state]="{ page: 1 }"
           [class.activated]="currentUrl === '/top'"
           >Top News</a
         >
